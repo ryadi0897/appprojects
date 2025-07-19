@@ -1,28 +1,4 @@
-"""Kivy rewrite of the original Tkinter milk‑control application (SEIGLA).
 
-This version focuses on the same core workflow:
- 1. Display existing control workbooks (controle‑MM‑YY.xlsx) stored in the
-    app's private storage directory.
- 2. Allow the user to create a new workbook for the current month, or open
-    an existing one.
- 3. Let the user choose a session (MATIN / MIDI / SOIR).
- 4. Provide a form to enter or update LOT / SNIT / NORMAL / PL for the
-    selected session.
-
-The app stores workbooks with *openpyxl* and keeps additional metadata
-(statut + notes) in a JSON file.
-
-The design is deliberately simple and avoids Kivy language (*.kv*) files so
-that everything sits in a single Python module that Buildozer can compile
-straight into an APK.
-
-Missing compared to the Tkinter original:
- • Inline editing of “Statut” and “Notes” in the controls list.
- • Fancy rounded‑corner buttons created with Pillow.
-   (Kivy’s built‑in widgets adapt better to multiple DPIs on mobile.)
-
-You can extend the look‑and‑feel later using KV or KivyMD.
-"""
 from __future__ import annotations
 
 import json
